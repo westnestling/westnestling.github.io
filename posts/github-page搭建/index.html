@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>My New Hugo Site :: My New Hugo Site</title>
+    <title> :: My New Hugo Site</title>
 
     
     <link href="/css/nucleus.css?1661584034" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/posts/github-page%E6%90%AD%E5%BB%BA/">
     <nav id="sidebar" class="">
 
 
@@ -170,8 +170,8 @@
   
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item
+        parent
         
-        active
         
         ">
       <a href="/posts/">
@@ -238,7 +238,7 @@
  
   
     
-      <li data-nav-id="/posts/github-page%E6%90%AD%E5%BB%BA/" title="" class="dd-item ">
+      <li data-nav-id="/posts/github-page%E6%90%AD%E5%BB%BA/" title="" class="dd-item active">
         <a href="/posts/github-page%E6%90%AD%E5%BB%BA/">
         
         
@@ -279,32 +279,104 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>My New Hugo Site</a> > <a href='/posts/'>Posts</a> > 
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#jekyll">jekyll</a></li>
+        <li><a href="#hugo">Hugo</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<p>搭建静态页面网站有几种技术选型：Hogo是Go语言，Hexo是nodejs，jekyll是Ruby</p>
+<p>jekyll 的优势是方便，Github 本身有内核支持深度绑定，项目中直接添加配置文件开始写文本就行。windows不推荐安装ruby环境，并且不支持部分私密不可见。</p>
+<p>hexo 的优势是速度快，中文社区，缺点是每次更新内容都需要执行严格的语法检查，然后再次部署。</p>
+<p>Hugo 简介响应快，简单，社区活跃</p>
+<blockquote>
+<p>Gitee <code>Pages</code> 是一个免费的静态网页托管服务，您可以使用 Gitee <code>Pages</code> 托管博客、项目官网等静态网页。如果您使用过 <code>Github Pages</code> 那么您会很快上手使用 Gitee 的 <code>Pages</code>服务。目前 Gitee <code>Pages</code> 支持 Jekyll、Hugo、Hexo编译静态资源。</p>
+<p>Jekyll、Hugo、Hexo 编译判断依据</p>
+<ol>
+<li>编译 Hugo 依据：仓库编译目录下存在<code>config.toml|json|yaml</code>文件和<code>content</code>目录的时候，会使用<code>hugo</code>生成静态文件。</li>
+<li>编译 Hexo 依据：仓库编译目录下存在<code>package.json</code>，<code>_config.yml</code>文件和<code>scaffolds</code>目录的，会使用<code>hexo generate</code>生成静态文件，由于每次部署编译需要重新克隆编译并进行<code>npm install</code>，所以使用 Hexo 的时间相对 Hugo 和 Jekyll 会长一些。</li>
+<li>当不符合上述1和2条件的时候，就默认使用Jekyll编译。</li>
+</ol>
+</blockquote>
+<h3 id="jekyll">jekyll</h3>
+<p>主题：https://github.com/topics/jekyll-theme</p>
+<h3 id="hugo">Hugo</h3>
+<p>社区：https://discourse.gohugo.io/</p>
+<p>主题：https://themes.gohugo.io/themes/hugo-theme-learn/</p>
+<p>安装：https://gohugo.io/getting-started/installing/</p>
+<h4 id="安装">安装</h4>
+
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -336,8 +408,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -351,6 +421,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -383,6 +456,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -407,8 +481,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/posts/my-first-post1/" title="My First Post1"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/posts/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/posts/macos-homebrew%E5%AE%89%E8%A3%85/" title="mac OS 安装 homebrew 失败解决方案" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>My New Hugo Site :: My New Hugo Site</title>
+    <title>mac OS 安装 homebrew 失败解决方案 :: My New Hugo Site</title>
 
     
     <link href="/css/nucleus.css?1661584034" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/posts/macos-homebrew%E5%AE%89%E8%A3%85/">
     <nav id="sidebar" class="">
 
 
@@ -170,8 +170,8 @@
   
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item
+        parent
         
-        active
         
         ">
       <a href="/posts/">
@@ -196,7 +196,7 @@
  
   
     
-      <li data-nav-id="/posts/macos-homebrew%E5%AE%89%E8%A3%85/" title="mac OS 安装 homebrew 失败解决方案" class="dd-item ">
+      <li data-nav-id="/posts/macos-homebrew%E5%AE%89%E8%A3%85/" title="mac OS 安装 homebrew 失败解决方案" class="dd-item active">
         <a href="/posts/macos-homebrew%E5%AE%89%E8%A3%85/">
         mac OS 安装 homebrew 失败解决方案
         
@@ -279,32 +279,132 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>My New Hugo Site</a> > <a href='/posts/'>Posts</a> > mac OS 安装 homebrew 失败解决方案
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#brew-install-慢">brew install 慢</a>
+      <ul>
+        <li><a href="#切换到-homebrew-目录">切换到 Homebrew 目录</a></li>
+        <li><a href="#替换-homebrew-coregit">替换 homebrew-core.git:</a></li>
+        <li><a href="#步骤三">步骤三</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              mac OS 安装 homebrew 失败解决方案
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<h1 id="mac-os-安装-homebrew-失败解决方案httpswwwcnblogscommizhifeip16558406html"><a href="https://www.cnblogs.com/mizhifei/p/16558406.html">mac OS 安装 homebrew 失败解决方案</a></h1>
+<p>1.查看<a href="https://www.cnblogs.com/mizhifei/p/brew.sh">homebrew官网</a>的安装教程，复制安装命令。</p>
+<p><img src="img/MacOs%20homeBrew%E5%AE%89%E8%A3%85/1595751-20220807081317482-116967477.png" alt="img"></p>
+<p>2.打开mac OS终端Terminal，输入安装命令，输入密码，回车确认安装。</p>
+<pre tabindex="0"><code>/bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34;
+</code></pre><p>3.然后你可能会得到一个错误：</p>
+<pre tabindex="0"><code>fatal: unable to access &#39;https://github.com/Homebrew/brew/&#39;: LibreSSL SSL_read: error:02FFF03C:system library:func(4095):Operation timed out, errno 60
+Failed during: git fetch --force origin
+</code></pre><p><img src="img/MacOs%20homeBrew%E5%AE%89%E8%A3%85/1595751-20220807082006923-2042878586.png" alt="img"></p>
+<p>也可能是这个错误：</p>
+<pre tabindex="0"><code>error: RPC failed; curl 28 LibreSSL SSL_read: error:02FFF03C:system library:func(4095):Operation timed out, errno 60
+fatal: expected flush after ref listing
+Error: Fetching /opt/homebrew/Library/Taps/homebrew/homebrew-core failed!
+Failed during: /opt/homebrew/bin/brew update --force --quiet
+</code></pre><p><strong><img src="img/MacOs%20homeBrew%E5%AE%89%E8%A3%85/1595751-20220807081618001-1962795975.png" alt="img"></strong></p>
+<p>4.出现这个错误是因为墙的原因，解决方案是使用镜像，好用的有<a href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/">清华镜像</a>和<a href="https://developer.aliyun.com/mirror/homebrew">阿里云镜像</a>，在这里我使用清华的镜像。</p>
+<p><strong>5.首先修改homebrew相关的环境变量：</strong></p>
+<p><strong>输入命令：</strong></p>
+<pre tabindex="0"><code>export HOMEBREW_BREW_GIT_REMOTE=&#34;https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git&#34;
+export HOMEBREW_CORE_GIT_REMOTE=&#34;https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git&#34;
+export HOMEBREW_BOTTLE_DOMAIN=&#34;https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles&#34;
+</code></pre><p>然后再运行安装命令：</p>
+<pre tabindex="0"><code>/bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&#34;
+</code></pre><p>安装成功，此时还无法在终端使用brew，需要配置brew的安装路径到环境变量。</p>
+<p><img src="img/MacOs%20homeBrew%E5%AE%89%E8%A3%85/1595751-20220807093743176-1658401334.png" alt="img"></p>
+<p>6.配置brew的安装路径到环境变量：</p>
+<pre tabindex="0"><code>echo &#39;eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;&#39; &gt;&gt; ~/.zprofile
+eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;
+</code></pre><p>配置完成即可在终端使用brew命令了，开始愉快的使用吧！</p>
+<p><img src="img/MacOs%20homeBrew%E5%AE%89%E8%A3%85/1595751-20220807094312585-1540111104.png" alt="img"></p>
+<h2 id="brew-install-慢">brew install 慢</h2>
+<h3 id="切换到-homebrew-目录">切换到 Homebrew 目录</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;$(brew --repo)&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">查看远程仓库</span> git remote -v.  <span style="color:#960050;background-color:#1e0010">默认的使用的</span>github<span style="color:#960050;background-color:#1e0010">。</span>
+</span></span><span style="display:flex;"><span> <span style="color:#960050;background-color:#1e0010">删除远程：</span> git remote rm origin 
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">添加阿里源</span> <span style="color:#960050;background-color:#1e0010">：</span>git remote <span style="color:#66d9ef">add</span> origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/brew.git</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">切换成阿里源</span>: git remote <span style="color:#66d9ef">set</span>-url origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/brew.git</span>
+</span></span></code></pre></div><h3 id="替换-homebrew-coregit">替换 homebrew-core.git:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;$(brew --repo)/Library/Taps/homebrew/homebrew-core&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">查看远程仓库</span> git remote -v.  <span style="color:#960050;background-color:#1e0010">默认的使用的</span>github<span style="color:#960050;background-color:#1e0010">。</span>
+</span></span><span style="display:flex;"><span> <span style="color:#960050;background-color:#1e0010">删除远程：</span> git remote rm origin 
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">添加阿里源</span> <span style="color:#960050;background-color:#1e0010">：</span>git remote <span style="color:#66d9ef">add</span> origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/homebrew-core.git</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">切换成阿里源：</span> git remote <span style="color:#66d9ef">set</span>-url origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/homebrew-core.git</span>
+</span></span></code></pre></div><h3 id="步骤三">步骤三</h3>
+<p>brew update
+注意这里需要等待一会，因为要更新资源。</p>
+<p>更新完后使用brew update，brew install速度变快很多了，不会卡在那半天没动静，替换镜像完成。</p>
+
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -336,8 +436,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -351,6 +449,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -367,6 +466,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -407,8 +509,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/posts/" title="Posts"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/posts/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/posts/my-first-post1/" title="My First Post1" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
