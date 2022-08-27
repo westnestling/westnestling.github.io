@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="generator" content="Hugo 0.92.0" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>mac OS 安装 homebrew 失败解决方案 :: My New Hugo Site</title>
 
     
-    <link href="/css/nucleus.css?1661584034" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1661584034" rel="stylesheet">
-    <link href="/css/hybrid.css?1661584034" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1661584034" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1661584034" rel="stylesheet">
-    <link href="/css/auto-complete.css?1661584034" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1661584034" rel="stylesheet">
-    <link href="/css/theme.css?1661584034" rel="stylesheet">
-    <link href="/css/tabs.css?1661584034" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1661584034" rel="stylesheet">
+    <link href="/css/nucleus.css?1661610891" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1661610891" rel="stylesheet">
+    <link href="/css/hybrid.css?1661610891" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1661610891" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1661610891" rel="stylesheet">
+    <link href="/css/auto-complete.css?1661610891" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1661610891" rel="stylesheet">
+    <link href="/css/theme.css?1661610891" rel="stylesheet">
+    <link href="/css/tabs.css?1661610891" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1661610891" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1661584034"></script>
+    <script src="/js/jquery-3.3.1.min.js?1661610891"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -135,14 +135,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1661584034"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1661584034"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1661610891"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1661610891"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1661584034"></script>
+<script type="text/javascript" src="/js/search.js?1661610891"></script>
 
     
   </div>
@@ -356,9 +356,9 @@
 <p>1.查看<a href="https://www.cnblogs.com/mizhifei/p/brew.sh">homebrew官网</a>的安装教程，复制安装命令。</p>
 <p><img src="img/MacOs%20homeBrew%E5%AE%89%E8%A3%85/1595751-20220807081317482-116967477.png" alt="img"></p>
 <p>2.打开mac OS终端Terminal，输入安装命令，输入密码，回车确认安装。</p>
-<pre tabindex="0"><code>/bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34;
+<pre tabindex="0"><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
 </code></pre><p>3.然后你可能会得到一个错误：</p>
-<pre tabindex="0"><code>fatal: unable to access &#39;https://github.com/Homebrew/brew/&#39;: LibreSSL SSL_read: error:02FFF03C:system library:func(4095):Operation timed out, errno 60
+<pre tabindex="0"><code>fatal: unable to access 'https://github.com/Homebrew/brew/': LibreSSL SSL_read: error:02FFF03C:system library:func(4095):Operation timed out, errno 60
 Failed during: git fetch --force origin
 </code></pre><p><img src="img/MacOs%20homeBrew%E5%AE%89%E8%A3%85/1595751-20220807082006923-2042878586.png" alt="img"></p>
 <p>也可能是这个错误：</p>
@@ -370,32 +370,32 @@ Failed during: /opt/homebrew/bin/brew update --force --quiet
 <p>4.出现这个错误是因为墙的原因，解决方案是使用镜像，好用的有<a href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/">清华镜像</a>和<a href="https://developer.aliyun.com/mirror/homebrew">阿里云镜像</a>，在这里我使用清华的镜像。</p>
 <p><strong>5.首先修改homebrew相关的环境变量：</strong></p>
 <p><strong>输入命令：</strong></p>
-<pre tabindex="0"><code>export HOMEBREW_BREW_GIT_REMOTE=&#34;https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git&#34;
-export HOMEBREW_CORE_GIT_REMOTE=&#34;https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git&#34;
-export HOMEBREW_BOTTLE_DOMAIN=&#34;https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles&#34;
+<pre tabindex="0"><code>export HOMEBREW_BREW_GIT_REMOTE=&quot;https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git&quot;
+export HOMEBREW_CORE_GIT_REMOTE=&quot;https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git&quot;
+export HOMEBREW_BOTTLE_DOMAIN=&quot;https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles&quot;
 </code></pre><p>然后再运行安装命令：</p>
-<pre tabindex="0"><code>/bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&#34;
+<pre tabindex="0"><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
 </code></pre><p>安装成功，此时还无法在终端使用brew，需要配置brew的安装路径到环境变量。</p>
 <p><img src="img/MacOs%20homeBrew%E5%AE%89%E8%A3%85/1595751-20220807093743176-1658401334.png" alt="img"></p>
 <p>6.配置brew的安装路径到环境变量：</p>
-<pre tabindex="0"><code>echo &#39;eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;&#39; &gt;&gt; ~/.zprofile
-eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;
+<pre tabindex="0"><code>echo 'eval &quot;$(/opt/homebrew/bin/brew shellenv)&quot;' &gt;&gt; ~/.zprofile
+eval &quot;$(/opt/homebrew/bin/brew shellenv)&quot;
 </code></pre><p>配置完成即可在终端使用brew命令了，开始愉快的使用吧！</p>
 <p><img src="img/MacOs%20homeBrew%E5%AE%89%E8%A3%85/1595751-20220807094312585-1540111104.png" alt="img"></p>
 <h2 id="brew-install-慢">brew install 慢</h2>
 <h3 id="切换到-homebrew-目录">切换到 Homebrew 目录</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;$(brew --repo)&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">查看远程仓库</span> git remote -v.  <span style="color:#960050;background-color:#1e0010">默认的使用的</span>github<span style="color:#960050;background-color:#1e0010">。</span>
-</span></span><span style="display:flex;"><span> <span style="color:#960050;background-color:#1e0010">删除远程：</span> git remote rm origin 
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">添加阿里源</span> <span style="color:#960050;background-color:#1e0010">：</span>git remote <span style="color:#66d9ef">add</span> origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/brew.git</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">切换成阿里源</span>: git remote <span style="color:#66d9ef">set</span>-url origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/brew.git</span>
-</span></span></code></pre></div><h3 id="替换-homebrew-coregit">替换 homebrew-core.git:</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;$(brew --repo)/Library/Taps/homebrew/homebrew-core&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">查看远程仓库</span> git remote -v.  <span style="color:#960050;background-color:#1e0010">默认的使用的</span>github<span style="color:#960050;background-color:#1e0010">。</span>
-</span></span><span style="display:flex;"><span> <span style="color:#960050;background-color:#1e0010">删除远程：</span> git remote rm origin 
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">添加阿里源</span> <span style="color:#960050;background-color:#1e0010">：</span>git remote <span style="color:#66d9ef">add</span> origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/homebrew-core.git</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">切换成阿里源：</span> git remote <span style="color:#66d9ef">set</span>-url origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/homebrew-core.git</span>
-</span></span></code></pre></div><h3 id="步骤三">步骤三</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">cd <span style="color:#e6db74">&#34;$(brew --repo)&#34;</span>
+<span style="color:#960050;background-color:#1e0010">查看远程仓库</span> git remote -v.  <span style="color:#960050;background-color:#1e0010">默认的使用的</span>github<span style="color:#960050;background-color:#1e0010">。</span>
+ <span style="color:#960050;background-color:#1e0010">删除远程：</span> git remote rm origin 
+<span style="color:#960050;background-color:#1e0010">添加阿里源</span> <span style="color:#960050;background-color:#1e0010">：</span>git remote <span style="color:#66d9ef">add</span> origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/brew.git
+</span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">切换成阿里源</span>: git remote <span style="color:#66d9ef">set</span>-url origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/brew.git
+</span></code></pre></div><h3 id="替换-homebrew-coregit">替换 homebrew-core.git:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">cd <span style="color:#e6db74">&#34;$(brew --repo)/Library/Taps/homebrew/homebrew-core&#34;</span>
+<span style="color:#960050;background-color:#1e0010">查看远程仓库</span> git remote -v.  <span style="color:#960050;background-color:#1e0010">默认的使用的</span>github<span style="color:#960050;background-color:#1e0010">。</span>
+ <span style="color:#960050;background-color:#1e0010">删除远程：</span> git remote rm origin 
+<span style="color:#960050;background-color:#1e0010">添加阿里源</span> <span style="color:#960050;background-color:#1e0010">：</span>git remote <span style="color:#66d9ef">add</span> origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/homebrew-core.git
+</span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">切换成阿里源：</span> git remote <span style="color:#66d9ef">set</span>-url origin https:<span style="color:#75715e">//mirrors.aliyun.com/homebrew/homebrew-core.git
+</span></code></pre></div><h3 id="步骤三">步骤三</h3>
 <p>brew update
 注意这里需要等待一会，因为要更新资源。</p>
 <p>更新完后使用brew update，brew install速度变快很多了，不会卡在那半天没动静，替换镜像完成。</p>
@@ -522,19 +522,19 @@ eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1661584034"></script>
-    <script src="/js/perfect-scrollbar.min.js?1661584034"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1661584034"></script>
-    <script src="/js/jquery.sticky.js?1661584034"></script>
-    <script src="/js/featherlight.min.js?1661584034"></script>
-    <script src="/js/highlight.pack.js?1661584034"></script>
+    <script src="/js/clipboard.min.js?1661610891"></script>
+    <script src="/js/perfect-scrollbar.min.js?1661610891"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1661610891"></script>
+    <script src="/js/jquery.sticky.js?1661610891"></script>
+    <script src="/js/featherlight.min.js?1661610891"></script>
+    <script src="/js/highlight.pack.js?1661610891"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1661584034"></script>
-    <script src="/js/learn.js?1661584034"></script>
-    <script src="/js/hugo-learn.js?1661584034"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1661610891"></script>
+    <script src="/js/learn.js?1661610891"></script>
+    <script src="/js/hugo-learn.js?1661610891"></script>
     
         
-            <script src="/mermaid/mermaid.js?1661584034"></script>
+            <script src="/mermaid/mermaid.js?1661610891"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
